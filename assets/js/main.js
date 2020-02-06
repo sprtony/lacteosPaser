@@ -11,9 +11,10 @@
   // Sticky Nav
     $(window).on('scroll', function() {
         if ($(window).scrollTop() > 200) {
-            $('.scrolling-navbar').addClass('top-nav-collapse');
+            $('.scrolling-navbar').addClass('top-nav-collapse c21').removeClass('cF');
+
         } else {
-            $('.scrolling-navbar').removeClass('top-nav-collapse');
+            $('.scrolling-navbar').removeClass('top-nav-collapse c21').addClass('cF');
         }
     });
 
@@ -43,7 +44,34 @@
 
     // one page navigation 
     $('.navbar-nav').onePageNav({
-            currentClass: 'active'
+            currentClass: 'active',
+            changeHash: true,
+            scrollChange: function($currentListItem) {
+                switch ($($currentListItem).children('a').attr('href')){
+                    case '#inicio':
+                        break;
+                    case '#paser':
+                        break;
+                    case '#antano':
+                        $('.top-nav-collapse').css('background-color','#5c2124');
+                        $('.nav-link').css('color','#fff');
+                        $('li.active a.nav-link').css('color','#b6b191');
+                        $('.navbar-expand-lg .navbar-nav li > a:before').css('background-color','#b6b191');
+                        break;
+                    case '#roma':
+                        $('.top-nav-collapse').css('background-color','#634724');
+                        $('.nav-link').css('color','#fff');
+                        $('li.active a.nav-link').css('color','#c2ae76');
+                        $('.navbar-expand-lg .navbar-nav li > a:before').css('background-color','#c2ae76');
+                        break;
+                    case '#fucotti':
+                        $('.top-nav-collapse').css('background-color','#31459b');
+                        $('.nav-link').css('color','#fff');
+                        $('li.active a.nav-link').css('color','#26a9e0');
+                        $('.navbar-expand-lg .navbar-nav li > a:before').css('background-color','#26a9e0');
+                        break;
+                }
+            }
     }); 
 
     /* Back Top Link active

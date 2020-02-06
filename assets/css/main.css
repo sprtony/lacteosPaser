@@ -602,7 +602,7 @@ a.back-to-top:hover, a.back-to-top:focus {
 }
 
 .top-nav-collapse {
-  background: #fff;
+  background-color: #fff;
   z-index: 999999;
   top: 0px !important;
   min-height: 58px;
@@ -613,7 +613,6 @@ a.back-to-top:hover, a.back-to-top:focus {
   animation-fill-mode: both;
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
-  background: #fff !important;
 }
 
 .top-nav-collapse .navbar-brand {
@@ -621,15 +620,15 @@ a.back-to-top:hover, a.back-to-top:focus {
 }
 
 .top-nav-collapse .navbar-nav .nav-link {
-  color: #212121 !important;
+  color: #212121;
 }
 
 .top-nav-collapse .navbar-nav .nav-link:hover {
-  color: #50a9de !important;
+  color: #50a9de;
 }
 
 .top-nav-collapse .navbar-nav li.active a.nav-link {
-  color: #50a9de !important;
+  color: #50a9de;
 }
 
 .indigo {
@@ -637,7 +636,6 @@ a.back-to-top:hover, a.back-to-top:focus {
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
-  color: #fff;
   padding: 0 15px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -658,7 +656,6 @@ a.back-to-top:hover, a.back-to-top:focus {
   margin-left: -10px;
   width: 15px;
   height: 2px;
-  background: #50a9de;
   -webkit-transform: scale3d(0, 1, 1);
   -moz-transform: scale3d(0, 1, 1);
   transform: scale3d(0, 1, 1);
@@ -696,7 +693,8 @@ a.back-to-top:hover, a.back-to-top:focus {
 }
 
 .navbar li.active a.nav-link {
-  color: #50a9de !important;
+  font-weight: bolder;
+  color: #50a9de ;
 }
 
 .dropdown-toggle::after {
@@ -2258,4 +2256,7 @@ a.back-to-top:hover, a.back-to-top:focus {
 }
 .about-item .df{
   min-height: 270px;
+}
+.c21{
+  color: #212121;
 }
