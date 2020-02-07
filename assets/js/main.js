@@ -47,32 +47,110 @@
             currentClass: 'active',
             changeHash: true,
             scrollChange: function($currentListItem) {
-                switch ($($currentListItem).children('a').attr('href')){
-                    case '#inicio':
-                        break;
-                    case '#paser':
-                        break;
-                    case '#antano':
-                        $('.top-nav-collapse').css('background-color','#5c2124');
-                        $('.nav-link').css('color','#fff');
-                        $('li.active a.nav-link').css('color','#b6b191');
-                        $('.navbar-expand-lg .navbar-nav li > a:before').css('background-color','#b6b191');
-                        break;
-                    case '#roma':
-                        $('.top-nav-collapse').css('background-color','#634724');
-                        $('.nav-link').css('color','#fff');
-                        $('li.active a.nav-link').css('color','#c2ae76');
-                        $('.navbar-expand-lg .navbar-nav li > a:before').css('background-color','#c2ae76');
-                        break;
-                    case '#fucotti':
-                        $('.top-nav-collapse').css('background-color','#31459b');
-                        $('.nav-link').css('color','#fff');
-                        $('li.active a.nav-link').css('color','#26a9e0');
-                        $('.navbar-expand-lg .navbar-nav li > a:before').css('background-color','#26a9e0');
-                        break;
-                }
+                changeStyle($($currentListItem).children('a').attr('href'));
             }
-    }); 
+    });
+
+  $( window ).on( 'hashchange', function( e ) {
+      changeStyle(window.location.hash);
+  } );
+
+
+    function changeStyle(hash) {
+        switch (hash){
+            case '#inicio':
+                $('.top-nav-collapse').css('background-color','transparent');
+                $('.nav-link').css('color','#FFF').hover(
+                function(){
+                    $(this).css("color", "#50a9de");
+                }, function(){
+                    if ($(this).parent().hasClass('active')){
+                        $(this).css("color", "#50a9de");
+                    }else{
+                        $(this).css("color", "#FFF");
+                    }
+                });
+                $('li.active a.nav-link').css('color','#50a9de');
+                $('.navbar-expand-lg .navbar-nav li > a:before').css('background-color','#50a9de');
+                break;
+            case '#paser':
+                $('.top-nav-collapse').css('background-color','#FFF');
+                $('.nav-link').css('color','#212121').hover(
+                    function(){
+                        $(this).css("color", "#50a9de");
+                    }, function(){
+                        if ($(this).parent().hasClass('active')){
+                            $(this).css("color", "#50a9de");
+                        }else{
+                            $(this).css("color", "#212121");
+                        }
+                    });
+                $('li.active a.nav-link').css('color','#50a9de');
+                $('.navbar-expand-lg .navbar-nav li > a:before').css('background-color','#50a9de');
+                break;
+            case '#antano':
+                $('.top-nav-collapse').css('background-color','#5c2124');
+                $('.nav-link').css('color','#fff').hover(
+                    function(){
+                        $(this).css("color", "#b6b191");
+                    }, function(){
+                        if ($(this).parent().hasClass('active')){
+                            $(this).css("color", "#b6b191");
+                        }else{
+                            $(this).css("color", "#fff");
+                        }
+                    });
+                $('li.active a.nav-link').css('color','#b6b191');
+                $('.navbar-expand-lg .navbar-nav li > a:before').css('background-color','#b6b191');
+                break;
+            case '#roma':
+                $('.top-nav-collapse').css('background-color','#634724');
+                $('.nav-link').css('color','#fff').hover(
+                    function(){
+                        $(this).css("color", "#c2ae76");
+                    }, function(){
+                        if ($(this).parent().hasClass('active')){
+                            $(this).css("color", "#c2ae76");
+                        }else{
+                            $(this).css("color", "#fff");
+                        }
+                    });
+                $('li.active a.nav-link').css('color','#c2ae76');
+                $('.navbar-expand-lg .navbar-nav li > a:before').css('background-color','#c2ae76');
+                break;
+            case '#fucotti':
+                $('.top-nav-collapse').css('background-color','#31459b');
+                $('.nav-link').css('color','#fff').hover(
+                    function(){
+                        $(this).css("color", "#26a9e0");
+                    }, function(){
+                        if ($(this).parent().hasClass('active')){
+                            $(this).css("color", "#26a9e0");
+                        }else{
+                            $(this).css("color", "#fff");
+                        }
+                    });
+                $('li.active a.nav-link').css('color','#26a9e0');
+                $('.navbar-expand-lg .navbar-nav li > a:before').css('background-color','#26a9e0');
+                break;
+            case '#contacto':
+                $('.top-nav-collapse').css('background-color','#FFF');
+                $('.nav-link').css('color','#212121').hover(
+                    function(){
+                        $(this).css("color", "#50a9de");
+                    }, function(){
+                        if ($(this).parent().hasClass('active')){
+                            $(this).css("color", "#50a9de");
+                        }else{
+                            $(this).css("color", "#212121");
+                        }
+                    });
+                $('li.active a.nav-link').css('color','#50a9de');
+                $('.navbar-expand-lg .navbar-nav li > a:before').css('background-color','#50a9de');
+                $('.top-nav-collapse .navbar-nav .nav-link:hover').css('color','#50a9de');
+                break;
+        }
+    }
 
     /* Back Top Link active
     ========================================================*/
