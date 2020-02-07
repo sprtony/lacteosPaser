@@ -59,7 +59,7 @@
     function changeStyle(hash) {
         switch (hash){
             case '#inicio':
-                $('.top-nav-collapse').css('background-color','transparent');
+                $('.navbar-expand-lg').css('background-color','transparent');
                 $('.nav-link').css('color','#FFF').hover(
                 function(){
                     $(this).css("color", "#50a9de");
